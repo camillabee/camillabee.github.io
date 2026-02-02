@@ -1,0 +1,673 @@
+/*
+    COMPONENT-SPECIFIC STYLES
+    Styles for reusable components (navbar, footer)
+    Mobile-first design
+*/
+
+/* Material Icons */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+/* Custom Bootstrap Navbar Styling - Mobile First */
+.custom-navbar {
+    background-color: var(--white) !important;
+    padding: 1rem;
+    border-bottom: 2px solid var(--light-gray);
+    z-index: 1100; /* Higher than side nav to always appear on top */
+}
+
+.custom-navbar .navbar-brand {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    /* Ensure navbar-brand never gets active state styles */
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.custom-navbar .logo {
+    height: 45px;
+    width: auto;
+    /* Ensure logo never gets active state styles */
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.custom-navbar .navbar-nav {
+    font-size: 20px;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.custom-navbar .navbar-collapse {
+    background-color: var(--white);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5em;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px var(--black);
+    z-index: 1100; /* Ensure dropdown menu is above side nav */
+}
+
+.custom-navbar .nav-link {
+    color: var(--black);
+    font-family: "Roboto", sans-serif;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5em;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+.custom-navbar .nav-link:hover {
+    color: var(--black);
+}
+
+/* Hover effect for non-active nav links - underline with transition */
+/* Exclude dropdown toggle (Projects) since it has its own styling */
+.custom-navbar .nav-link:not(.active):not(.custom-dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    bottom: 0.2em;
+    left: 0.3em;
+    right: 0.3em;
+    height: 2px;
+    background-color: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.custom-navbar .nav-link:not(.active):not(.custom-dropdown-toggle):hover::after {
+    transform: scaleX(1);
+}
+
+/* Active state for nav links on mobile - matches Projects toggle style */
+.custom-navbar .nav-link.active:not(.custom-dropdown-toggle) {
+    background-color: var(--light-teal-gray);
+    color: var(--black);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5em;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px var(--black);
+    font-weight: 700;
+    text-align: left;
+    text-decoration: none;
+}
+
+.custom-navbar .navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.custom-navbar .navbar-toggler .material-symbols-outlined {
+    font-size: 36px;
+    color: var(--black);
+}
+
+.custom-navbar .navbar-toggler:hover .material-symbols-outlined {
+    color: var(--dark-teal-gray);
+}
+
+/* Projects dropdown toggle - Mobile First */
+.custom-navbar .nav-item.dropdown .custom-dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0.75rem 1rem;
+    font-weight: normal;
+    text-align: left;
+}
+
+/* Projects toggle active state on mobile */
+.custom-navbar .nav-item.dropdown .custom-dropdown-toggle.active {
+    background-color: var(--light-teal-gray);
+    color: var(--black);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5em;
+    border: 3px solid var(--black);
+    box-shadow: 8px 8px var(--black);
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+/* Projects dropdown menu - Mobile First */
+.custom-navbar .nav-item.dropdown .custom-dropdown-menu {
+    position: static;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    padding-left: 2rem; /* Indent the entire dropdown menu so backgrounds align */
+    min-width: auto;
+    border-radius: 0;
+    pointer-events: none;
+    display: block;
+    /* Transition properties for smooth open/close */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Bootstrap adds .show class to dropdown-menu when opened */
+.custom-navbar .nav-item.dropdown .custom-dropdown-menu.show,
+.custom-navbar .dropdown-menu.show {
+    max-height: 500px; /* Large enough to accommodate all items */
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1100; /* Ensure dropdown menu is above side nav */
+}
+
+.custom-navbar .nav-item.dropdown .dropdown-item {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Hover state for dropdown items on mobile */
+.custom-navbar .nav-item.dropdown .dropdown-item:hover,
+.custom-navbar .nav-item.dropdown .dropdown-item:focus {
+    background-color: var(--light-gray);
+    color: var(--black);
+}
+
+/* Remove Bootstrap default active state on mobile (keep white) */
+.custom-navbar .nav-item.dropdown .dropdown-item:active {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Active state for project dropdown items on mobile */
+.custom-navbar .nav-item.dropdown .dropdown-item.active {
+    background-color: var(--light-teal-gray);
+    color: var(--black);
+}
+
+/* Widescreen Styles */
+@media (min-width: 768px) {
+    .custom-navbar {
+        padding: 1.2rem 2rem;
+    }
+
+    .nav-item {
+        width: auto;
+    }
+
+    .custom-navbar .navbar-nav {
+        gap: 2rem;
+        text-align: inherit;
+        justify-content: inherit;
+        align-items: center;
+    }
+
+    .custom-navbar .navbar-collapse {
+        background-color: transparent;
+        margin-top: 0;
+        padding: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 0.3em;
+        text-align: inherit;
+        display: inline-block;
+        width: auto;
+    }
+
+    /* Active state for nav links (Home, About) - matches Projects button style */
+    /* Exclude dropdown toggle which has its own active styling */
+    .custom-navbar .nav-link.active:not(.custom-dropdown-toggle) {
+        background-color: var(--light-teal-gray);
+        color: var(--black);
+        padding: 0.5em 0.75em;
+        border-radius: 0.5em;
+        border: 3px solid var(--black);
+        box-shadow: 8px 8px var(--black);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .custom-navbar .nav-link.active:hover {
+        color: var(--white);
+        background-color: var(--dark-teal-gray);
+    }
+
+    /* Default styling for Projects dropdown toggle (when not active) */
+    .custom-navbar .nav-item.dropdown .custom-dropdown-toggle:not(.active) {
+        background-color: transparent;
+        color: var(--black);
+        padding: 0.3em;
+        border-radius: 0.5em;
+        border: none;
+        box-shadow: none;
+        font-weight: normal;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .custom-navbar .nav-item.dropdown.show .custom-dropdown-toggle:not(.active),
+    .custom-navbar .nav-item.dropdown:hover .custom-dropdown-toggle:not(.active) {
+        background-color: transparent;
+        color: var(--black);
+    }
+
+    /* Active state for Projects dropdown toggle when on a project page */
+    .custom-navbar .custom-dropdown-toggle.active {
+        background-color: var(--light-teal-gray) !important;
+        color: var(--black) !important;
+        padding: 0.5em 0.75em;
+        border-radius: 0.5em;
+        border: 3px solid var(--black);
+        box-shadow: 8px 8px var(--black);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    /* Hover state for active Projects toggle - darkens but stays styled */
+    .custom-navbar .custom-dropdown-toggle.active:hover {
+        background-color: var(--dark-teal-gray) !important;
+        color: var(--white) !important;
+    }
+
+    /* Keep active state even when hovering over dropdown container (but not the button itself) */
+    /* This ensures the active styling persists when hovering the dropdown menu */
+    .custom-navbar .nav-item.dropdown:hover .custom-dropdown-toggle.active:not(:hover) {
+        background-color: var(--light-teal-gray) !important;
+        color: var(--black) !important;
+    }
+
+    /* Projects dropdown menu - Widescreen hover behavior */
+    /* Override mobile styles that interfere with widescreen */
+    .custom-navbar .nav-item.dropdown .custom-dropdown-menu {
+        background-color: var(--white);
+        min-width: 260px;
+        box-shadow: 8px 8px var(--black);
+        border: 3px solid var(--black);
+        border-radius: 0.5em;
+        padding: 0.25rem 0 0 0;
+        margin-top: 0;
+        margin-left: 0;
+        padding-left: 0;
+        position: absolute;
+        float: none;
+        width: auto;
+        min-width: 260px;
+        /* Hidden by default for smooth transition */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        /* Remove Bootstrap's default display: none */
+        display: block !important;
+        /* Disable pointer events when hidden */
+        pointer-events: none;
+        /* Override mobile transition properties */
+        max-height: none;
+        overflow: visible;
+    }
+
+    .custom-navbar .custom-dropdown-menu .dropdown-item {
+        color: var(--black);
+        padding: 12px 16px;
+        text-decoration: none;
+        border-radius: 0 !important; /* Remove border-radius for all dropdown items */
+        text-align: left;
+    }
+
+    /* Hover state for non-active widescreen dropdown items */
+    .custom-navbar .custom-dropdown-menu .dropdown-item:not(.active):hover,
+    .custom-navbar .custom-dropdown-menu .dropdown-item:not(.active):focus {
+        background-color: var(--light-gray) !important;
+        color: var(--black);
+        transition: 0.3s;
+    }
+
+    /* Active state for project dropdown items - no border-radius */
+    .custom-navbar .custom-dropdown-menu .dropdown-item.active {
+        background-color: var(--light-teal-gray);
+        color: var(--black);
+        border-radius: 0 !important;
+        transition: 0.3s;
+        font-weight: 700;
+    }
+
+    /* Hover state for active project dropdown items */
+    .custom-navbar .custom-dropdown-menu .dropdown-item.active:hover,
+    .custom-navbar .custom-dropdown-menu .dropdown-item.active:focus {
+        background-color: var(--dark-teal-gray) !important;
+        color: var(--white) !important;
+        transition: 0.3s;
+    }
+
+    /* Show dropdown on hover for widescreen - hover on nav-item OR dropdown-menu */
+    .custom-navbar .nav-item.dropdown:hover .custom-dropdown-menu,
+    .custom-navbar .nav-item.dropdown .custom-dropdown-menu:hover {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        /* Enable pointer events when visible so menu items can be clicked */
+        pointer-events: auto;
+    }
+}
+
+.widescreen-active {
+    font-weight: bold;
+}
+
+/* 
+    FOOTER COMPONENT
+*/
+footer {
+    padding: 2em 2em 5em;
+    text-align: center;
+    background-color: var(--maroon);
+}
+
+footer h2,
+footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer a {
+    padding-right: 0.25em;
+    font-size: 20px;
+}
+
+footer a:hover {
+    color: var(--light-gray);
+}
+
+/* 
+    SIDE NAVIGATION COMPONENT
+    Reusable side navigation for project pages
+    Mobile-first design
+*/
+#project .side-nav {
+    position: sticky;
+    top: 2em; /* Align with main content top padding */
+    left: 0;
+    width: 0;
+    max-height: calc(100vh - 2em);
+    overflow: visible; /* Allow shadow to show */
+    background-color: transparent;
+    z-index: 999; /* Lower than navbar so navbar always appears on top */
+    transition: width 0.3s ease;
+    padding: 0 10px 10px 0; /* Padding for shadow space - right and bottom */
+    box-sizing: content-box; /* Padding doesn't affect width calculation */
+    margin-right: 2em; /* Space between nav and content */
+    align-self: flex-start; /* Align to top */
+}
+
+#project .side-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 120px;
+    left: 1em;
+    z-index: 999; /* Lower than navbar so navbar always appears on top */
+    background-color: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    cursor: pointer;
+    box-shadow: 4px 4px var(--black);
+}
+
+#project .side-nav-toggle:hover {
+    background-color: var(--light-gray);
+}
+
+#project .side-nav-toggle i {
+    font-size: 24px;
+    color: var(--black);
+}
+
+#project .side-nav-list {
+    list-style: none;
+    padding: 1em;
+    margin: 0;
+    background-color: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 0.5em;
+    box-shadow: 6px 6px 0 var(--black);
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+
+#project .side-nav-item {
+    margin: 0;
+}
+
+#project .side-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    color: var(--black);
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+    gap: 0.5em;
+}
+
+/* Text span - takes available space, can wrap if needed */
+#project .side-nav-link > span {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Make the left border more prominent for active items */
+#project .side-nav-link.active {
+    border-left-width: 5px;
+}
+
+#project .side-nav-link:hover {
+    background-color: var(--light-gray);
+    color: var(--black);
+}
+
+#project .side-nav-link.active {
+    background-color: var(--dark-teal-gray);
+    color: var(--white);
+    border-left-color: var(--dark-teal-gray);
+    font-weight: 600;
+}
+
+/* Expanded H2 state - light teal background (but not if it's active) */
+#project .side-nav-item.h2-item.expanded > .side-nav-link:not(.active) {
+    background-color: var(--light-teal-gray);
+    color: var(--black);
+    border-left-color: var(--light-teal-gray);
+}
+
+/* Active H3 items should have dark teal background with white text */
+#project .side-nav-item.h3-item .side-nav-link.active {
+    background-color: var(--dark-teal-gray);
+    color: var(--white);
+    border-left-color: var(--dark-teal-gray);
+}
+
+#project .side-nav-item.h2-item .side-nav-link {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0.75em 1em;
+}
+
+#project .side-nav-item.h3-item .side-nav-link {
+    padding-left: 2em;
+    font-size: 15px;
+}
+
+#project .side-nav-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#project .side-nav-item.expanded .side-nav-submenu {
+    max-height: 1000px;
+}
+
+#project .side-nav-chevron {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* Collapsed state - chevron down (default) */
+#project .side-nav-item.h2-item:not(.expanded) .side-nav-chevron {
+    transform: rotate(0deg);
+}
+
+/* Expanded state - chevron up (rotated 180deg) */
+#project .side-nav-item.h2-item.expanded .side-nav-chevron {
+    transform: rotate(180deg);
+}
+
+/* Mobile and tablet styles for side nav - show/hide button */
+@media (max-width: 1023px) {
+    #project header {
+        padding-left: calc(1.25em + min(70px, 12vw)) !important;
+    }
+    
+    #project main {
+        padding-left: calc(1.5em + min(70px, 12vw)) !important;
+    }
+    
+    #project .main-content-wrapper {
+        flex-direction: column; /* Stack on mobile */
+    }
+
+    #project .side-nav-toggle {
+        display: block;
+    }
+
+    #project .side-nav {
+        width: 0;
+        position: fixed; /* Fixed on mobile for overlay behavior */
+        top: 140px;
+        left: 2em;
+        transition: width 0.3s ease; /* Ensure width transition works for closing */
+    }
+
+    #project .side-nav.open {
+        width: 250px;
+    }
+
+    /* When closed on mobile/tablet, hide the list completely */
+    #project .side-nav:not(.open) .side-nav-list {
+        opacity: 0;
+        border: none;
+        box-shadow: none;
+        pointer-events: none;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Add transitions for closing */
+    }
+
+    /* When open on mobile/tablet, show the list with shadow */
+    #project .side-nav.open .side-nav-list {
+        opacity: 1;
+        border: 3px solid var(--black);
+        box-shadow: 6px 6px 0 var(--black) !important;
+        pointer-events: auto;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Ensure transitions work for opening */
+    }
+
+    /* Ensure overflow allows shadow on mobile/tablet when open */
+    #project .side-nav.open {
+        overflow: visible;
+    }
+}
+
+/* Medium screens - nav always visible with content margin */
+@media (min-width: 1024px) and (max-width: 1599px) {
+    #project .side-nav {
+        width: 250px !important;
+        overflow-y: auto;
+        overflow-x: visible;
+        padding: 0 10px 10px 0;
+        flex-shrink: 0; /* Don't shrink the nav */
+        top: calc(2em + 105px); /* Account for navbar height */
+        max-height: calc(100vh - 2em - 105px);
+    }
+
+    #project .side-nav .side-nav-list {
+        opacity: 1 !important;
+        visibility: visible !important;
+        border: 3px solid var(--black) !important;
+        box-shadow: 6px 6px 0 var(--black) !important;
+        pointer-events: auto !important;
+    }
+
+    #project .side-nav-toggle {
+        display: none;
+    }
+}
+
+/* Large screens - nav positioned separately to the left of centered content */
+@media (min-width: 1600px) {
+    #project .side-nav {
+        width: 250px !important;
+        overflow-y: auto;
+        overflow-x: visible;
+        padding: 0 10px 10px 0;
+        position: sticky; /* Sticky so it scrolls with content */
+        top: calc(105px + 3em); /* Account for navbar (105px) + main padding top (3em) */
+        flex-shrink: 0; /* Don't shrink */
+        /* Max height: viewport minus navbar (105px) and main padding top (3em) */
+        max-height: calc(100vh - 105px - 3em);
+    }
+
+    #project .side-nav .side-nav-list {
+        border: 3px solid var(--black) !important;
+        box-shadow: 6px 6px 0 var(--black) !important;
+        pointer-events: auto !important;
+    }
+
+    #project .side-nav-toggle {
+        display: none;
+    }
+}

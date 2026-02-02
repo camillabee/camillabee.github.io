@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud9 | Camilla Clark</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/cc-favicon.png">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- Google Fonts - make sure you select both normal and bold styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="project">
+    <!-- OPTIONAL VISUAL INDICATOR FOR BREAK POINTS -->
+    <!-- <div id="tag"></div> -->
+
+    <!-- NAVIGATION -->
+    <div id="navbar-container"></div>
+
+	<!-- PROJECT BANNER -->
+	<picture class="project-banner">
+		<source media="(min-width: 1200px)" srcset="images/cloud9-widescreen-banner.jpg">
+		<img src="images/cloud9-mobile-banner.jpg" alt="Cloud9 banner" class="banner-image">
+	</picture>
+
+    <header>
+        <div>
+            <h1>Cloud9</h1>
+            <div class="project-role-pills">
+                <span class="role-pill">Product Design</span>
+                <span class="role-pill">Full-Stack Development</span>
+                <span class="role-pill">UX Research</span>
+                <span class="role-pill">Agile Collaboration</span>
+            </div>
+        </div>
+
+        <p>Cloud9 is a behavior-change web application designed to support young adults quitting vaping through progress tracking, symptom insights, and peer support. I led user research, feature design, and full-stack implementation of core product experiences. The project focused on translating behavioral science into an empathetic, data-informed digital product.</p>
+
+        <h2 class="sr-only">Project Summary</h2>
+        <section class="project-summary">
+            <div>
+                <h3>Project At A Glance</h3>
+                <ul class="project-bullets">
+                    <li><strong>Project Type:</strong> Undergraduate capstone</li>
+                    <li><strong>Duration:</strong> August 2024 - May 2025</li>
+                    <li><strong>Team:</strong> Three undergraduate students</li>
+                    <li><strong>Award:</strong> Students' Choice - 1st out of 53 projects</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Roles &amp; Responsibilities</h3>
+                <ul class="project-bullets">
+                    <li><strong>User Research &amp; Discovery:</strong> Planned and conducted interviews, surveys, and usability tests</li>
+                    <li><strong>UX Design:</strong> Designed core flows, dashboards, and progress tracking experiences</li>
+                    <li><strong>Feature Ownership:</strong> Led progress tracking and symptom insight epics from concept to delivery</li>
+                    <li><strong>Full-Stack Development:</strong> Built features end-to-end across database, backend, and frontend layers</li>
+            </div>
+            
+            
+            <div>
+                <h3>Tools Used</h3>
+                <div class="tools-list">
+                    <div class="tool-item">
+                        <img src="images/figma-logo.png" alt="Figma" class="tool-logo">
+                        <span class="tool-name">Figma</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="images/php-logo.png" alt="PHP" class="tool-logo">
+                        <span class="tool-name">PHP</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="images/mysql-logo.png" alt="MySQL" class="tool-logo">
+                        <span class="tool-name">MySQL</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="images/github-logo.png" alt="GitHub" class="tool-logo">
+                        <span class="tool-name">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="main-content-wrapper">
+            <!-- SIDE NAVIGATION -->
+            <nav id="side-nav" class="side-nav">
+                <button id="side-nav-toggle" class="side-nav-toggle" aria-label="Toggle navigation">
+                    <i class="bi bi-list-task" aria-hidden="true"></i>
+                </button>
+                <ul id="side-nav-list" class="side-nav-list"></ul>
+            </nav>
+            
+            <div class="main-content-inner">
+                <section>
+                    <h2>The Problem</h2>
+                    <p>Many young adults attempting to quit vaping struggle not only with withdrawal, but with understanding their progress and coping with symptoms over time. Existing quitting tools often focus on streaks or abstinence alone, offering limited reflection, personalization, or social support. This creates a fragmented experience where users lack insight into their patterns and feel isolated during the quitting process.</p>
+                </section>
+                <section>
+            <h2>Phase 1: Research & Discovery</h2>
+            <p>This phase focused on understanding the lived experience of quitting vaping through primary research and synthesis. Over two sprints, we conducted expert interviews and a user survey, then translated findings into personas, user stories, feature epics, and early wireframes. This research fundamentally shaped Cloud9's language, feature direction, and approach to behavior change.</p>
+
+            <div class="two-column-container">
+                <div class="two-column">
+                    <h3>Expert Interviews</h3>
+                    <p>I led three interviews with addiction researchers and public health professionals specializing in nicotine use among young adults. These conversations provided nuanced perspectives on quitting strategies, relapse, and harm reduction that challenged my initial assumptions and directly influenced product decisions.</p>
+                </div>
+                <div class="two-column">
+                    <h3>User Survey</h3>
+                    <p>I also contributed to the design of a short survey to understand vaping behaviors, motivations, and quitting patterns among young adults. This survey helped validate high-level trends, but the qualitative depth of expert interviews provided far more influential insights in shaping design direction.</p>
+                </div>
+            </div>
+
+            <div class="findings-card">
+                <h3 class="findings-title">Key Findings</h3>
+                <ul class="findings-list">
+                    <li>
+                        <span class="finding-label">
+                            <i class="bi bi-clock-fill" aria-hidden="true" style="margin-right: 0.5em;"></i>
+                            Nicotine use starts early
+                        </span>
+                        <span class="finding-text">Many vapers start as early as 12 years old and continue into college and beyond. However, others start vaping later in life as a way to quit cigarettes.</span>
+                    </li>
+                    <li>
+                        <span class="finding-label">
+                            <i class="bi bi-x-octagon-fill" aria-hidden="true" style="margin-right: 0.5em;"></i>
+                            People quit for many reasons
+                        </span>
+                        <span class="finding-text">Health concerns, financial cost, social pressure, and personal goals were all cited as reasons for quitting. One expert described that college students preparing to graduate often don't want to carry the habit with them into the next stage of life.</span>
+                    </li>
+                    <li>
+                        <span class="finding-label">
+                            <i class="bi bi-shuffle" aria-hidden="true" style="margin-right: 0.5em;"></i>
+                            Quitting is non-linear
+                        </span>
+                        <span class="finding-text">Success often involves gradual reduction, setbacks, and medical intervention, rather than strict abstinence. It typically takes multiple attempts to quit successfully.</span>
+                    </li>
+                    <li>
+                        <span class="finding-label">
+                            <i class="bi bi-chat-left-text-fill" aria-hidden="true" style="margin-right: 0.5em;"></i>
+                            Language shapes user experience
+                        </span>
+                        <span class="finding-text">Terms like "relapse" feel loaded with judgment and can discourage continued engagement.</span>
+                    </li>
+                    <li>
+                        <span class="finding-label">
+                            <i class="bi bi-lightning-charge-fill" aria-hidden="true" style="margin-right: 0.5em;"></i>
+                            Immediate support is crucial
+                        </span>
+                        <span class="finding-text">Users need tools that help them cope with triggers and withdrawal symptoms whenever and wherever they occur. This support should be accessible, personalized, and context-aware.</span>
+                    </li>
+                </ul>
+                <p>These insights were synthesized into personas, user stories, epics, and low-fidelity wireframes to guide the subsequent build phases.</p>
+            </div>
+
+
+            <h3>Personas</h3>
+            <p>Based on our research, we created four personas to guide our design decisions:</p>
+            <ul class="project-bullets">
+                <li><strong>Riley</strong> the busy college student</li>
+                <li><strong>Taylor</strong> the high school student with friends who vape</li>
+                <li><strong>Matt</strong> the parent of a vaping teenager</li>
+                <li><strong>Alex</strong> the adult who is struggling to quit</li>
+            </ul>
+            <p>
+                As the project progressed, Riley emerged as our primary persona due to strong alignment with our research findings and the team's ability to design and validate features within this context. Her story provided a clear narrative thread that guided the development of Cloud9's core features, ensuring that each experience was grounded in a relatable and empathetic context.
+            </p>
+            
+            <div class="persona-card">
+                <div class="persona-top">
+                    <img src="images/cloud9-riley.png" alt="Riley Campbell" class="persona-image">
+                    <div class="persona-info">
+                        <div class="persona-header">
+                            <h3>Riley Campbell</h3>
+                            <p class="persona-details">Age: 22 | Senior Engineering Student | West Lafayette, IN</p>
+                        </div>
+                        <p class="persona-bio">Riley is a senior engineering student preparing for graduation and the transition into full-time work. She started vaping as a way to manage stress during demanding semesters and now worries about withdrawal impacting her focus and mental health. As she looks toward her next chapter, she wants to quit vaping without adding more pressure to an already stressful routine.</p>
+                        <p class="persona-quote">"I want to quit vaping, but I don’t want it to take over my life."</p>
+                    </div>
+                </div>
+                <div class="persona-sections">
+                    <div class="persona-section">
+                        <h4>Goals</h4>
+                        <ul class="project-bullets">
+                            <li>Reduce or quit vaping without disrupting school or daily routines</li>
+                            <li>Understand what symptoms to expect and how to cope with them</li>
+                            <li>Enter post-grad life without carrying the habit forward</li>
+                        </ul>
+                    </div>
+                    <div class="persona-section">
+                        <h4>Pain Points</h4>
+                        <ul class="project-bullets">
+                            <li>Withdrawal symptoms increase anxiety and make it harder to focus</li>
+                            <li>Stressful academic workload triggers cravings</li>
+                            <li>All-or-nothing quitting narratives feel discouraging</li>
+                        </ul>
+                    </div>
+                    <div class="persona-section">
+                        <h4>Design Implications</h4>
+                        <ul class="project-bullets">
+                            <li>Surface symptom-specific insights tied to daily progress</li>
+                            <li>Support gradual reduction and reflection, not just streaks</li>
+                            <li>Provide calming, actionable coping strategies during high-stress moments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>From Research to Product Direction</h3>
+            <p>
+                Research insights and personas helped us narrow our focus to a small set of problems we could meaningfully address within the scope of the project. Rather than designing for every possible scenario, we prioritized features that supported Riley's day-to-day quitting experience:
+            </p>
+            
+            <ul class="project-bullets">
+                <li>Understanding and coping with withdrawal symptoms</li>
+                <li>Gaining insight into one's own vaping habits</li>
+                <li>Tracking progress through daily metrics</li>
+                <li>Enabling real-time peer support and accountability</li>
+            </ul>
+            
+            <p>
+                Based on our research and prioritized user needs, we organized Cloud9 into a set of feature epics.
+                Each epic represented a core part of the product experience and allowed the team to work in parallel
+                while maintaining a cohesive system.
+            </p>
+
+            <div class="features-card">
+                <h3 class="features-title">Feature Epics</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <h4 class="feature-title">Profiles</h4>
+                        <p class="feature-text">User identity, preferences, and onboarding</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+                        <h4 class="feature-title">Logging</h4>
+                        <p class="feature-text">Tracking symptoms, vape usage, and milestones over time</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4 class="feature-title">Groups</h4>
+                        <p class="feature-text">Joining and participating in peer support groups</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <h4 class="feature-title">Messaging</h4>
+                        <p class="feature-text">Communicating within support groups</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h4 class="feature-title">Insights</h4>
+                        <p class="feature-text">Personalized guidance based on logged data and progress</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 class="feature-title">Moderation</h4>
+                        <p class="feature-text">Ensuring group safety and healthy interactions</p>
+                    </div>
+                </div>
+            </div>
+            <p>
+                I served as the primary owner for the <strong>Logging</strong> and <strong>Insights</strong> epics, which formed the foundation
+                for Cloud9's personalized experience. These epics translated research insights directly into
+                day-to-day user interactions and informed many downstream design decisions.
+            </p>
+
+            </section>
+
+                <section>
+                    <h2>Phase 2: Design</h2>
+                    <p>In this phase, we translated our research insights into low-fidelity wireframes, high-fidelity prototypes, and database designs. We focused on refining our initial ideas based on our research and began laying the technical foundation for the product. We also developed a project management plan and began to define the technical stack for the project.</p>
+
+                    <h3>Low-Fidelity Wireframes</h3>
+                    <p>With core epics defined, we explored low-fidelity wireframes to validate our initial hypotheses and feature ideas before committing to visual design or implementation. These wireframes focus on the core user flows associated with logging vape usage and accessing insights into one's own quitting journey.</p>
+            
+            <h4>Home Page</h4>
+            <div class="two-column-container text-image-layout">
+                <div class="two-column">
+                    <p class="mt-0">The home page was designed as a daily check-in point where users can quickly understand their progress, access support, and reflect on their journey without cognitive overload.</p>
+                    <ul class="project-bullets">
+                        <li><strong>Persistent tracker:</strong> Time since last vape is always visible to make progress feel tangible</li>
+                        <li><strong>Low-friction actions:</strong> Commonly used actions like logging, viewing stats, and messaging support groups are accessible immediately upon opening the app</li>
+                    </ul>
+                </div>
+                <div class="two-column">
+                    <img src="images/cloud9-home-page-lofi.jpg" alt="Home Page Wireframe">
+                </div>
+            </div>
+
+            <h4>Initial Logging Concepts</h4>
+            <div class="two-column-container image-text-layout">
+                <div class="two-column">
+                    <img src="images/cloud9-log-lofi-flow.jpg" alt="Logging Flow Wireframe">
+                </div>
+                <div class="two-column">
+                    <p>Early logging concepts focused on giving users a structured way to record vaping events and the circumstances surrounding them. At this stage, the primary goal was to support reflection and pattern recognition, and data caputred through logs would be used in data visualizations.
+                    </p>
+                    <ul class="project-bullets">
+                        <li><strong>Event-based logging:</strong> Users could record vaping events with date, time, and contributing triggers</li>
+                        <li><strong>Context over judgment:</strong> Even early designs emphasized capturing circumstances rather than assigning blame. The goal was to suppport users in understanding their behavior by promoting reflection and self-awareness</li>
+                        <li><strong>Foundational data capture:</strong> Logs were designed to create a data backbone for other features. At this stage, the intention was for the data to be used in data visualizations, but that would be changed as the project progressed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Early Insights Model</h4>
+            <div class="two-column-container text-image-layout">
+                <div class="two-column">
+                    <p>Initial insight designs were based on the assumption that time since last vape was the most meaningful indicator of user needs. Insights were delivered at predefined milestones such as one hour, twelve hours, and multiple days without vaping.
+                    </p>
+                    <ul class="project-bullets">
+                        <li><strong>Milestone-driven insights:</strong> Guidance surfaced based on elapsed time rather than user input</li>
+                        <li><strong>Educational focus:</strong> Early insights emphasized general information about withdrawal timelines</li>
+                        <li><strong>Low interaction cost:</strong> Users could quickly access insights without logging additional data</li>
+                    </ul>
+                    <p>While this approach provided helpful baseline education, it treated quitting as a uniform experience and did not account for individual symptoms or emotional states.</p>
+                    
+                </div>
+                <div class="two-column">
+                    <img src="images/cloud9-insight-lofi-flow.jpg" alt="Insights Flow Wireframe">
+                </div>
+            </div>
+            <p>As we conducted additional research and usability testing, these assumptions were challenged. Insights later evolved to respond directly to user logs and symptoms, enabling more personalized and empathetic guidance.
+            </p>
+            
+            <h3>Refining the Product Direction</h3>
+            <p>While early wireframes focused on validating core concepts, the transition to high-fidelity design required several foundational decisions. These decisions were informed by research synthesis, instructor feedback, and technical feasibility considerations.</p>
+
+            <div class="findings-card">
+                <h4 class="findings-title">Design Changes</h4>
+                <ul class="findings-list">
+                    <li>
+                        <span class="finding-label">Shift toward neutral language</span>
+                        <span class="finding-text">Early designs used terms like "relapse" and "setback" to describe vaping events. Based on research and expert feedback, I recognized that this framing could create feelings of discouragement and suggest that complete abstinence was the only way to quit. I decided to change the terminology to "vape usage" and remove dialog that stated that implied that any usage was a failure.</span>
+                    </li>
+                    <li>
+                        <span class="finding-label">Symptom-based insights</span>
+                        <span class="finding-text">Insights were originally triggered solely by time since last vape, but I realized this may result in users receiving repetitive messaging if they logg mutliple vape events. Additionally, I wanted the insights to be able to give targeted advice based on the user's specific symptoms.</span>
+                    </li>
+                    <li>
+                        <span class="finding-label">Splitting usage and symptom logs</span>
+                        <span class="finding-text">To support more nuanced insights, I decided to split logs into two distinct types: usage logs and symptom logs. This separation allowed the system to distinguish between behavioral events and physical or emotional experiences, improving both data quality and user clarity.</span>
+                    </li>
+                    <li>
+                        <span class="finding-label">Removing the data visualization concept</span>
+                        <span class="finding-text">As the logging and insight concepts became more developed, the visualizations associated with log data grew outside the scope of this project. I decided to remove this feature from the initial version of the product and instead prioritize core functionality.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>High-Fidelity Prototypes</h3>
+            <p>With the product direction refined, we moved on to creating high-fidelity prototypes in Figma. These prototypes were used to validate the design decisions and provide clear direction for the development phase.</p>
+
+            <h4>Home Page</h4>
+            <div class="two-column-container text-image-layout">
+                <div class="two-column">
+                    <p class="mt-0">The home page remained largely unchanged from the low-fidelity prototype, but with more refined visual design and reworked navigation patterns. The primary goal remained to provide clear starting points for the main functions of the app: progress tracking and peer support.</p>
+                </div>
+                <div class="two-column">
+                    <img src="images/cloud9-home-page-hifi.jpg" alt="Home Page Wireframe">
+                </div>
+            </div>
+            <h4>Revised Logging and Insights</h4>
+            <div class="two-column-container image-text-layout">
+                <div class="two-column">
+                    <img src="images/cloud9-hifi-flow.jpg" alt="Logging Flow Wireframe">
+                </div>
+                <div class="two-column">
+                    <p>This flow demonstrates how Cloud9 responds dynamically to user input. Logging symptoms not only records data, but directly influences the guidance users receive in the moment.
+                    </p>
+                    <ul class="project-bullets">
+                        <li><strong>Separated logging paths:</strong> Users can log symptoms or vape usage independently, reducing friction and improving data clarity</li>
+                        <li><strong>Symptom-driven insights:</strong> Logged symptoms trigger relevant guidance, shifting insights from time-based education to personalized support</li>
+                        <li><strong>Just-in-time delivery:</strong> Insight popups appear immediately after logging, offering reassurance when users are most receptive</li>
+                    </ul>
+                </div>
+            </div>
+                </section>
+                <section>
+                    <h2>Phase 3: Development</h2>
+                    <p>The development phase focused on translating validated designs into a fully functional web application. Over eight weeks, I implemented core features end-to-end, balancing technical constraints, evolving requirements, and real-world usability considerations.
+                    </p>
+
+                    <div class="features-card">
+            <h3 class="features-title">Implementation Highlights</h3>
+            <div class="features-grid highlights-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="bi bi-journal-text"></i>
+                    </div>
+                    <h4 class="feature-title">Logging system</h4>
+                    <p class="feature-text">Built symptom and vape usage logging with structured inputs, validation, and persistent storage</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+                    <h4 class="feature-title">Insights engine</h4>
+                    <p class="feature-text">Implemented logic to surface personalized guidance based on logged symptoms</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <h4 class="feature-title">Dashboard & tracker</h4>
+                    <p class="feature-text">Developed the home page tracker and supporting views to reflect real-time progress</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h4 class="feature-title">Full-stack integration</h4>
+                    <p class="feature-text">Connected frontend interactions to backend logic and MySQL database structures</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Adapting to Technical Constraints</h3>
+        <p>
+            One project requirement was the use of two external APIs integrated with our database.
+            When an initially planned API was no longer viable due to technical and scope constraints,
+            I incorporated the Google Maps API into the logging flow to capture location data for vape
+            usage logs.
+        </p>
+
+        <ul class="project-bullets">
+            <li>Integrated Google Maps API to allow users to associate locations with usage events</li>
+            <li>Stored location data alongside log entries for future analysis and insights</li>
+            <li>Preserved the original intent of contextual logging while meeting course requirements</li>
+        </ul>
+
+        <h3>Built Product Preview</h3>
+        <p>
+            The following screenshots show the application in a functional state during development,
+            demonstrating key user flows and system behavior.
+        </p>
+
+        <h4>Home Page During Development</h4>
+        <div class="two-column-container text-image-layout">
+            <div class="two-column">
+                <p class="mt-0">This screenshot shows the home page as implemented midway through development. At this stage, almost all of the core features had been implemented and were ready to be validated through usability testing.</p>
+                    <ul class="project-bullets">
+                        <li><strong>Functional tracker:</strong> Time since last vape updated dynamically based on user logs</li>
+                        <li><strong>Integrated discussion board:</strong> Community content was live and connected to user accounts</li>
+                        <li><strong>Actionable entry points:</strong> Logging symptoms or vape usage remained one click away</li>
+                    </ul>
+            </div>
+            <div class="two-column">
+                <img src="images/cloud9-home-page-midterm.jpg" alt="Home Page During Development">
+            </div>
+        </div>
+
+        <h4>Symptom Logging and Insights</h4>
+        <div class="two-column-container image-text-layout">
+            <div class="two-column">
+                <img src="images/cloud9-midterm-flow.jpg" alt="Logging Flow During Development">
+            </div>
+            <div class="two-column">
+                <p>This flow demonstrates the system behavior after a user logs symptoms. Logging directly triggers relevant insights, creating a feedback loop between user input and guidance.
+                </p>
+                <ul class="project-bullets">
+                    <li><strong>Symptom logging:</strong> Users could select symptoms and add contextual notes,
+                        which were stored and processed by the system</li>
+                    <li><strong>Immediate insight delivery:</strong> Logging symptoms triggered a relevant insight
+                        without requiring additional navigation</li>
+                    <li><strong>Progressive disclosure:</strong> Users could move from a brief popup to a full article
+                        with coping strategies to provide more detailed information when users were ready</li>
+                    <li><strong>Data-driven behavior:</strong> Insight content was determined by logged symptoms to provide personalized and relevant guidance</li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <p>By the end of the build phase, Cloud9 was a fully functional system with end-to-end flows supporting logging, insights, and community interaction. While the core architecture and feature set were in place, this stage also marked the point where assumptions could be validated through real user feedback.</p>
+                </section>
+                <section>
+                    <h2>Phase 4: Iteration</h2>
+        <p>With a functional system in place, we entered the iteration phase to evaluate how well Cloud9 supported users in practice. This phase focused on identifying friction across core flows and validating whether design decisions translated into intuitive experiences.</p>
+
+        <h3>Usability Testing</h3>
+        <p>We conducted moderated usability testing with a mix of mental health professionals, addiction researchers, and vape users. Sessions began with background questions, followed by free exploration using a think-aloud protocol, and concluded with a set of task-based evaluations covering the full system. After each task, participants rated difficulty and shared feedback, followed by exit questions to surface additional insights.</p>
+
+        <h4>Key Findings</h4>
+        <p>While testing confirmed some known issues, it also revealed more systemic problems with navigation and comprehension. Users consistently struggled to locate core features and understand how insights related to their logged data.</p>
+        <ul class="project-bullets">
+            <li><strong>Navigation friction:</strong> Users found the nav bar cluttered and misaligned with their goals</li>
+            <li><strong>Log discoverability issues:</strong> Participants had difficulty finding and returning to log forms</li>
+            <li><strong>Insight confusion:</strong> The popup-based insight system felt disconnected and easy to miss</li>
+        </ul>
+
+        <div class="findings-card">
+            <h3 class="findings-title">Design Changes Based on User Feedback</h3>
+            <ul class="findings-list findings-grid">
+                <li>
+                    <span class="finding-label">Reworked navigation</span>
+                    <span class="finding-text">Simplified the nav bar to focus on primary user tasks</span>
+                </li>
+                <li>
+                    <span class="finding-label">Removed insight popups</span>
+                    <span class="finding-text">Eliminated time-limited popups that users found disruptive</span>
+                </li>
+                <li>
+                    <span class="finding-label">Created a log detail page</span>
+                    <span class="finding-text">Centralized all log information and related insights in one place</span>
+                </li>
+                <li>
+                    <span class="finding-label">Expanded insights per log</span>
+                    <span class="finding-text">Displayed guidance for every reported symptom</span>
+                </li>
+            </ul>
+        </div>
+
+        <h3>Final Design</h3>
+        <h4>Home Page</h4>
+        <div class="two-column-container text-image-layout">
+            <div class="two-column">
+                <p class="mt-0">The home page remained the central hub for the app, but with more refined visual design and clearer navigation. The navigation bar was simplified to focus on primary user tasks, with less relevant pages moved to the footer.</p>
+            </div>
+            <div class="two-column">
+                <img src="images/cloud9-home-page-final.jpg" alt="Home Page Final Design">
+            </div>
+        </div>
+
+        <h4>Symptom Logging and Insights</h4>
+        <div class="two-column-container image-text-layout">
+            <div class="two-column">
+                <img src="images/cloud9-final-flow.jpg" alt="Final Logging Flow">
+            </div>
+            <div class="two-column">
+                <p>Usability testing showed that users found the insight popup disruptive and disconnected from their logs. In response, the insight system was redesigned to live directly alongside logged data in a dedicated log details page.</p>
+                <ul class="project-bullets">
+                    <li><strong>Direct transition:</strong> After submitting a symptom log, users are taken directly to a log details page rather than returned to the home page</li>
+                    <li><strong>All relevant insights:</strong> Insights are displayed for every selected symptom, eliminating randomness and information loss</li>
+                    <li><strong>Clear relationship between data and support:</strong> Logs and insights are now visually and conceptually linked</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>With these changes in place, the link between logged data and supportive insights became more direct and intuitive. Users could now see exactly how their logged symptoms were being used to generate relevant guidance, and could easily return to the log details page to review whenever they needed support.</p>
+
+                </section>
+                <section>
+                    <h2>Phase 5: Delivery</h2>
+        <p>The final phase focused on presenting Cloud9 to a broader audience through visual, interactive, and in-person formats. This stage emphasized clear communication, storytelling, and demonstrating the product’s value beyond the classroom.</p>
+
+        <h3>Capstone Fair Presentation</h3>
+        <div class="two-column-container text-image-layout">
+            <div class="two-column">
+                <p>Cloud9 was presented at the senior capstone fair, where attendees explored projects through live demos and conversations with project teams.</p>
+            </div>
+            <div class="two-column">
+                <img src="images/cloud9-fair-presentation.jpg" alt="Capstone Fair Presentation">
+            </div>
+        </div>
+
+        <h3>Capstone Poster</h3>
+        <div class="two-column-container image-text-layout">
+            <div class="two-column">
+                <img src="images/cloud9-poster.png" alt="Capstone Poster">
+            </div>
+            <div class="two-column">
+                <p>We created a project poster to communicate the problem, solution, and key features of Cloud9 at a glance. The poster was designed for a non-technical audience and served as the primary artifact during the capstone fair.</p>
+            </div>
+        </div>
+        <h3>Video Demo</h3>
+        <div class="two-column-container text-image-layout video-demo-section">
+            <div class="two-column">
+                <p>A short demo video walks through the core user flows and system behavior for viewers who want a deeper look at the product in action.</p>
+            </div>
+            <div class="two-column">
+                <iframe src="https://www.youtube.com/embed/FkjQ6W1pHHA?si=KCNnHd0glikz44gQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        <h3>Outcome &amp; Recognition</h3>
+        <p>Cloud9 was awarded the Students’ Choice Award, selected by fellow capstone students as their favorite project among 53 teams.</p>
+    </section>
+    <section>
+        <h2>Reflection &amp; Takeaways</h2>
+        <p>Cloud9 was my first opportunity to carry a product from initial ideation through final delivery. It challenged me to balance product vision with technical feasibility, time constraints, and user needs.</p>
+
+        <div class="findings-card">
+            <h3 class="findings-title">Lessons Learned</h3>
+            <ul class="findings-list">
+                <li>
+                    <span class="finding-label">Adaptability is crucial to success</span>
+                    <span class="finding-text">The final iteration of insights is nearly unrecognizable from the inital concept, but it changed for the better. Learning that users did not resonate with the first implementation taught me to challenge my assumptions and prioritize user feedback.</span>
+                </li>
+                <li>
+                    <span class="finding-label">Communication must happen early and often</span>
+                    <span class="finding-text">There were points throughout the project where my team and I realized the pieces we had built separately felt disjointed when put together. This prompted me to lead discussions in our team meetings about how our epics should interact and how to create a cohesive experience. I learned that even when the whole team is working from the same wirefames and documentation, constant communication is a must to ensure intentions are aligned and the pieces of the system blend together seamlessly.</span>
+                </li>
+                <li>
+                    <span class="finding-label">Knowing what to cut is just as important as knowing what to build</span>
+                    <span class="finding-text">As the project evolved, I realized that a few features I initially designed for would not fit within the scope of the project. Though it was difficult to let go of them, learning when to cut or delay features helped me focus on delivering a cohesive core experience rather than an overextended one with shallow implementations.</span>
+                </li>
+                <li>
+                    <span class="finding-label">Constraints shape better solutions</span>
+                    <span class="finding-text">Tight timelines and technical requirements forced the team to make intentional decisions about priorities. These constraints ultimately pushed us toward simpler, clearer solutions that better served users.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/components.js"></script>
+    <script src="js/side-nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

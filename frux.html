@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Reporting UX | Camilla Clark</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/cc-favicon.png">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- Google Fonts - make sure you select both normal and bold styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="project">
+    <!-- OPTIONAL VISUAL INDICATOR FOR BREAK POINTS -->
+    <!-- <div id="tag"></div> -->
+
+    <!-- NAVIGATION -->
+    <div id="navbar-container"></div>
+
+    <!-- PROJECT BANNER -->
+    <picture class="project-banner">
+        <source media="(min-width: 1200px)" srcset="images/frux-widescreen-banner.jpg">
+        <img src="images/frux-mobile-banner.jpg" alt="Financial Reporting UX banner" class="banner-image">
+    </picture>
+
+    <header>
+        <div>
+            <h1>Financial Reporting UX</h1>
+            <div class="project-role-pills">
+                <span class="role-pill">Academic Research</span>
+                <span class="role-pill">Web Application Development</span>
+                <span class="role-pill">UX Design</span>
+            </div>
+        </div>
+
+        <p>Financial reports contain critical information for investors, researchers, and analysts, yet they are often presented in dense formats with poor usability. Through my graduate assistantship, I am leading the development of a modular web application that restructures legacy financial documents into flexible, research-ready interfaces. This project combines large-scale HTML refactoring, UX design, and experimental research to evaluate how information design impacts user comprehension.</p>
+
+        <h2 class="sr-only">Project Summary</h2>
+        <section class="project-summary">
+            <div>
+                <h3>Project At A Glance</h3>
+                <ul class="project-bullets">
+                    <li><strong>Project Type:</strong> Graduate assistantship</li>
+                    <li><strong>Duration:</strong> August 2025 - May 2026</li>
+                    <li><strong>Team:</strong> Collaborating with three accounting professors</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Roles &amp; Responsibilities</h3>
+                <ul class="project-bullets">
+                    <li><strong>System Architecture:</strong> Rebuilt legacy 10-K document into a modular, reusable web framework</li>
+                    <li><strong>UX Design:</strong> Designed alternative presentation models to improve financial document usability</li>
+                    <li><strong>Research Collaboration:</strong> Partnered with accounting faculty to support usability studies</li>
+                </ul>
+                
+            </div>
+            
+            <div>
+                <h3>Tools Used</h3>
+                <div class="tools-list">
+                    <div class="tool-item">
+                        <img src="images/figma-logo.png" alt="Figma" class="tool-logo">
+                        <span class="tool-name">Figma</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="images/flask-logo.png" alt="Flask" class="tool-logo">
+                        <span class="tool-name">Flask</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="images/cursor-logo.png" alt="Cursor" class="tool-logo">
+                        <span class="tool-name">Cursor</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="main-content-wrapper">
+            <!-- SIDE NAVIGATION -->
+            <nav id="side-nav" class="side-nav">
+                <button id="side-nav-toggle" class="side-nav-toggle" aria-label="Toggle navigation">
+                    <i class="bi bi-list-task" aria-hidden="true"></i>
+                </button>
+                <ul id="side-nav-list" class="side-nav-list"></ul>
+            </nav>
+            
+            <div class="main-content-inner">
+                <section>
+                    <h2>The Problem</h2>
+                    <p>Public company financial reports such as 10-K filings contain critical information for investors, researchers, and analysts, yet they are often presented in dense, fragmented, and difficult-to-navigate formats. Existing documents prioritize regulatory compliance over usability, making it time-consuming for readers to locate, compare, and interpret key disclosures. As a result, users face unnecessary cognitive load when working with information that is central to financial decision-making.</p>
+                </section>
+
+                <section>
+                    <h2>Research Goals</h2>
+                    <p>
+                        This project investigates how information design impacts users’ ability to navigate and interpret complex financial documents. While concepts such as cognitive load and information hierarchy are well established in UX design, they remain underexplored in financial reporting. Working with accounting faculty, this study aims to evaluate whether applying user-centered design principles can measurably improve comprehension, efficiency, and decision-making when working with 10-K filings.
+                    </p>
+                
+                    <ul class="project-bullets">
+                        <li><strong>Establish a baseline:</strong> Create a control version that closely mirrors the official SEC format while using clean, maintainable code.</li>
+                        <li><strong>Isolate design variables:</strong> Test individual UX enhancements such as side navigation, pagination, and reworked information hierarchy in separate document versions.</li>
+                        <li><strong>Measure cognitive load:</strong> Evaluate how different layouts affect users’ speed, accuracy, and ability to synthesize information.</li>
+                        <li><strong>Compare combined solutions:</strong> Assess whether integrating multiple UX improvements produces additive benefits.</li>
+                        <li><strong>Support empirical validation:</strong> Generate research-ready interfaces for controlled usability studies and IRB approval.</li>
+                    </ul>
+                </section>
+                
+
+                <section>
+                    <h2>Early Design Exploration</h2>
+                    <p>I began this project by closely analyzing an existing 10-K filing to understand how users currently encounter and navigate financial disclosures. Through this review, I identified recurring usability issues related to information hierarchy, navigation, redundancy, and cognitive load. These findings informed both my early design concepts and the technical direction of the platform.</p>
+
+                    <h3>Pre-Redesign Experience</h3>
+                    <div class="two-column-container text-image-layout">
+                        <div class="two-column">
+                            <p>The original 10-K filing closely mirrors the structure of its PDF version. While technically accessible online, it was not designed for efficient navigation, scanning, or comprehension in a web environment.</p>
+                            
+                            <ul class="project-bullets">
+                                <li><strong>No navigation:</strong> Users were required to scroll through the 90-page document to locate key sections.</li>
+                                <li><strong>Poor readability:</strong> Small font sizes and full-width text blocks increased cognitive load.</li>
+                                <li><strong>Non-responsive layouts:</strong> Tables and content did not adapt well to different screen sizes.</li>
+                            </ul>
+                        </div>
+                        <div class="two-column">
+                            <img src="images/frux-starting-point.jpg" alt="Starting point for the financial reporting UX project">
+                        </div>
+                    </div>
+                    
+
+                    <h3>Initial Design Exploration</h3>
+                    <div class="two-column-container image-text-layout">
+                        <div class="two-column">
+                            <img src="images/frux-lo-fi.jpg" alt="Lo-fi design for the financial reporting UX project">
+                        </div>
+                        <div class="two-column">
+                            <p>Based on the usability issues identified in the initial analysis, I developed a low-fidelity concept focused on improving navigation, readability, and information hierarchy.</p>
+                            
+                            <ul class="project-bullets">
+                                <li><strong>Breadcrumb navigation:</strong> Provided users with clear context about their location within the document.</li>
+                                <li><strong>Section-based sidebar:</strong> Enabled direct access to key items and subsections.</li>
+                                <li><strong>Constrained reading width:</strong> Improved readability by limiting line length.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Scoping & Prioritization</h3>
+                    <p>
+                        After early design exploration, I worked with faculty stakeholders to translate usability opportunities into a phased improvement roadmap. Each proposed enhancement was evaluated based on implementation complexity and research value, allowing us to prioritize features that could be realistically tested within the initial study timeline.
+                    </p>
+
+                    <h4>Phase 1: Core Usability Improvements</h4>
+                    <ul class="project-bullets">
+                        <li><strong>Improved navigation:</strong> Breadcrumbs, table of contents access, and sticky side navigation</li>
+                        <li><strong>Readable layouts:</strong> Constrained content width and responsive design</li>
+                        <li><strong>Clear information hierarchy:</strong> Bold headers and simplified labels</li>
+                        <li><strong>Refined structure:</strong> Removing duplicates, reserved sections, and reorganizing related content</li>
+                        <li><strong>Pagination:</strong> Breaking long documents into manageable sections</li>
+                    </ul>
+
+                    <h4>Phase 2: Advanced Analysis Features for Future Research</h4>
+                    <ul class="project-bullets">
+                        <li><strong>Enhanced metadata tooltips:</strong> Contextual explanations and term definitions</li>
+                        <li><strong>Search functionality:</strong> Supporting targeted information retrieval</li>
+                        <li><strong>Document comparison tools:</strong> Highlighting year-over-year changes</li>
+                        <li><strong>Executive summaries:</strong> High-level overviews with deep links</li>
+                        <li><strong>Data visualizations:</strong> Supporting financial interpretation</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Overcoming Technical Constraints</h2>
+                    <p>Before meaningful UX improvements could be implemented, the underlying document structure needed to be stabilized and modernized. The original 10-K filing was not designed for modular reuse, scalability, or experimentation. Addressing these technical constraints became a prerequisite for building a flexible, research-ready application capable of supporting multiple interface configurations.</p>
+
+                    <h3>Legacy System Challenges</h3>
+                    <p>The official SEC HTML filing consisted of approximately 38,800 lines of tightly coupled, non-modular code. Layout was driven primarily by nested tables and extensive inline styling, with minimal semantic structure and no clear separation between content and presentation.</p>
+
+                    <p>This architecture posed significant barriers to usability experimentation. Individual sections could not be easily isolated, reordered, or repurposed, and even small interface changes risked unintended side effects elsewhere in the document.</p>
+
+                    <div class="features-card">
+                        <h4 class="features-title">Key Technical Limitations</h4>
+                        <div class="features-grid features-grid-2x2">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="bi bi-code-slash"></i>
+                                </div>
+                                <h5 class="feature-title">Inline styling</h5>
+                                <p class="feature-text">Extensive inline CSS and presentation logic embedded directly in content</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="bi bi-table"></i>
+                                </div>
+                                <h5 class="feature-title">Table-based layouts</h5>
+                                <p class="feature-text">Tables and line breaks used for structural positioning and layout control</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="bi bi-diagram-3"></i>
+                                </div>  
+                                <h5 class="feature-title">Low semantic structure</h5>
+                                <p class="feature-text">Minimal semantic markup for navigation and hierarchy</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="bi bi-link-45deg"></i>
+                                </div>
+                                <h5 class="feature-title">High coupling</h5>
+                                <p class="feature-text">Tightly coupled layout, content, and formatting</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Building a Modular Architecture</h3>
+                    <p>To support controlled UX experimentation, the 10-K needed to be transformed from a monolithic HTML file into a flexible, modular system. I redesigned the document architecture to separate content, structure, and presentation, enabling multiple interface versions to be generated from a single canonical source.</p>
+
+                    <h4>Refactoring for Reusability</h4>
+                    <div class="two-column-container text-image-layout">
+                        <div class="two-column">
+                            <p>Before modularization was possible, the original SEC filing had to be transformed into a maintainable, semantic format. Key improvements included:</p>
+                            
+                            <ul class="project-bullets">
+                                <li>Replacing inline styles with reusable CSS classes</li>
+                                <li>Introducing semantic HTML for headings and sections</li>
+                                <li>Separating layout from content using margin and spacing rules</li>
+                                <li>Standardizing typography and table structures</li>
+                            </ul>
+                            <p>This refactoring created a consistent structural foundation that could support navigation, pagination, and accessibility features.</p>
+                        </div>
+                        <div class="two-column">
+                            <img src="images/frux-html-refactoring.jpg" alt="HTML refactoring for the financial reporting UX project">
+                        </div>
+                    </div>
+
+                    <h4>Modular Document Architecture</h4>
+                    <div class="two-column-container text-image-layout">
+                        <div class="two-column">
+                            <p>In addition to cleaning the indivdual sections, I designed a three-layer architecture that allows the same content to be rendered in multiple interface configurations.</p>
+                            <p>Rather than hardcoding layout rules into each section, the system assembles documents dynamically using shared templates and metadata. This architecture supports rapid prototyping of new interface configurations and enables controlled experimentation with different information design approaches.</p>
+                        </div>
+                        <div class="two-column">
+                            <div class="features-card architecture-diagram-card">
+                                <div class="architecture-diagram">
+                                    <h5 class="features-title architecture-diagram-title">Architecture Diagram</h5>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">
+                                            <i class="bi bi-palette"></i>
+                                        </div>
+                                        <h5 class="feature-title">Presentation Layer</h5>
+                                        <p class="feature-text">Flask routes, Jinja templates, and version-specific styling</p>
+                                    </div>
+                                    <div class="architecture-diagram-arrow" aria-hidden="true">
+                                        <i class="bi bi-arrow-up"></i>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">
+                                            <i class="bi bi-database"></i>
+                                        </div>
+                                        <h5 class="feature-title">Metadata Layer</h5>
+                                        <p class="feature-text">A JSON registry defining document structure and ordering</p>
+                                    </div>
+                                    <div class="architecture-diagram-arrow" aria-hidden="true">
+                                        <i class="bi bi-arrow-up"></i>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon">
+                                            <i class="bi bi-file-earmark-code"></i>
+                                        </div>
+                                        <h5 class="feature-title">Content Layer</h5>
+                                        <p class="feature-text">Reusable, semantic HTML fragments</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Current Status &amp; Next Phase</h2>
+                    <p>Much of the foundational work for this project is now complete. The original 10-K has been fully decomposed into modular, reusable content fragments, supported by a centralized metadata registry and dynamic rendering templates. This infrastructure establishes a stable, scalable foundation for experimentation and ensures that future interface variations can be developed without duplicating or restructuring core content.</p>
+
+                    <p>The next phase of the project will focus on implementing and evaluating targeted UX interventions, including navigation systems, pagination, and enhanced information hierarchy. In parallel, faculty researchers are pursuing IRB approval and finalizing study protocols to enable controlled usability testing. These efforts will allow the platform to transition from technical foundation to empirical evaluation of how design choices impact financial comprehension.</p>
+                </section>
+
+                <section>
+                    <h2>Reflection</h2>
+                    <p>This project challenged me to operate simultaneously as a designer, engineer, and research collaborator. Working within the constraints of a large-scale legacy system required me to rethink how UX improvements are implemented at the architectural level. By building a modular foundation first, I learned how long-term flexibility and research rigor depend on early technical decisions.</p>
+
+                    <div class="findings-card">
+                        <h3 class="findings-title">Lessons Learned</h3>
+                        <ul class="findings-list">
+                            <li>
+                                <span class="finding-label">UX innovation depends on technical foundations</span>
+                                <span class="finding-text">Meaningful interface improvements were only possible after restructuring the underlying document architecture. This project reinforced that scalable UX work often begins with engineering decisions that enable long-term experimentation.</span>
+
+                            </li>
+                            <li>
+                                <span class="finding-label">Designing for research requires methodological rigor</span>
+                                <span class="finding-text">Building interfaces for controlled studies required careful separation of variables and consistency across versions. This project reinforced how experimental design considerations shape UX decisions in academic and enterprise contexts.</span>
+
+                            </li>
+                            <li>
+                                <span class="finding-label">Large systems require structured, modular thinking</span>
+                                <span class="finding-text">Decomposing a 38,000-line document into maintainable components strengthened my ability to reason about complex systems and design for scalability, reuse, and future iteration.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/components.js"></script>
+    <script src="js/side-nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
