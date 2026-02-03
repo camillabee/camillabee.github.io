@@ -647,7 +647,7 @@ footer a:hover {
     }
 }
 
-/* Large screens - nav positioned separately to the left of centered content */
+/* Large screens (1600px+) - same layout as 1024–1599px: nav left of content with gap */
 @media (min-width: 1600px) {
     #project .side-nav {
         width: 250px !important;
